@@ -69,6 +69,7 @@ public class League {
         System.out.println("Goal scored after " + 
                 currGame.goals[0].theTime + " mins by " + 
                 currGame.goals[0].thePlayer.playerName + " of " +
-                currGame.goals[0].theTeam.teamName );            
+                currGame.goals[0].theTeam.teamName );    
+        
     }   
 }
