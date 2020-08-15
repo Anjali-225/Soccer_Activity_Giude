@@ -17,8 +17,16 @@ public class Team {
     private int pointsTotal;
     
     /* Practice 10-2. Add goalsTotal attribute here */
+    private int goalsTotal;
     
     /* Practice 10-2. Add goalsTotalInc() method here */
+//    public void incGoalsTotal(int goals) {
+//        this.goalsTotal = this.goalsTotal + goals;
+//    }
+    
+     public void incGoalsTotal(int goals){
+        this.setGoalsTotal(this.getGoalsTotal() + goals);
+    }
     
     public void incPointsTotal(int points){
         this.pointsTotal += points;
@@ -75,6 +83,20 @@ public class Team {
      */
     public void setPointsTotal(int pointsTotal) {
         this.pointsTotal = pointsTotal;
+    }
+
+    /**
+     * @return the goalsTotal
+     */
+    public int getGoalsTotal() {
+        return goalsTotal;
+    }
+
+    /**
+     * @param goalsTotal the goalsTotal to set
+     */
+    public void setGoalsTotal(int goalsTotal) {
+        this.goalsTotal = goalsTotal;
     }
     
 }

@@ -68,13 +68,19 @@ public class League {
            
         for (Team currTeam: theTeams){
             /* Practice 10-2. Modify the line below to print out the goalsTotal for the current team also */
-            System.out.println(currTeam.getTeamName() + " : " + currTeam.getPointsTotal());
+            System.out.println(currTeam.getTeamName() + " : " +
+                currTeam.getPointsTotal() + " : " + currTeam.getGoalsTotal());
+            
             currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal()?currTeam:currBestTeam;
             /* Practice 10-2. Remove ternary statement above then add a replacement if statement here */
-        }
-        
-        System.out.println("Winner of the League is " + currBestTeam.getTeamName());
-        
+            if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
+                currBestTeam = currTeam;
+            } else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal()){
+                if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
+                    currBestTeam = currTeam;
+                }
+            }  
+        }    
+        System.out.println("Winner of the League is " + currBestTeam.getTeamName());        
     }
-
 }
