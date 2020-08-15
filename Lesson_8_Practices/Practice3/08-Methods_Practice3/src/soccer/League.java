@@ -17,16 +17,17 @@ public class League {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        League theLeague = new League();        
 
         Team[] theTeams = createTeams();
-        Game[] theGames = createGames(theTeams);
+        Game[] theGames = theLeague.createGames(theTeams);
 
         Game currGame = theGames[0];
         
         currGame.playGame();
         
         System.out.println(currGame.getDescription());
-
     }
 
     public static Team[] createTeams() {
@@ -58,7 +59,7 @@ public class League {
         return theTeams;
     }
 
-    public static Game[] createGames(Team[] theTeams) {
+    public Game[] createGames(Team[] theTeams) {
         Game theGame = new Game();
         theGame.homeTeam = theTeams[0];
         theGame.awayTeam = theTeams[1];
